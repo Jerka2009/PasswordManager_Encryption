@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordManager_Encryption"
         mc:Ignorable="d"
-        Title="Password manager (Argon2)" Height="450" Width="447" ResizeMode="NoResize" Closing="OnClosing" Background="#FF413535">
+        Title="Password manager (AES-256)" Height="450" Width="447" ResizeMode="NoResize" Closing="OnClosing" Background="#FF000505" Icon="/lock-keyhole.png">
     <Grid>
-        <Button x:Name="Save_bt" Content="Save" HorizontalAlignment="Left" Margin="210,217,0,0" VerticalAlignment="Top" Height="55" Width="146" Click="OnSave_click" Background="#FF3EA139" FontSize="16"/>
-        <Button x:Name="Remove_bt" Content="Remove" HorizontalAlignment="Left" Margin="210,299,0,0" VerticalAlignment="Top" Height="55" Width="144" Click="OnRemove_click" Background="#FF3EA139" FontSize="16"/>
-        <TextBox x:Name="Login_Box" HorizontalAlignment="Left" Margin="168,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="32" ToolTip="Login" Background="#FF306A3C"/>
-        <TextBox x:Name="Password_Box" HorizontalAlignment="Left" Margin="168,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="32" ToolTip="Pssword" Background="#FF275631"/>
-        <ListBox x:Name="PasswordList" d:ItemsSource="{d:SampleData ItemCount=18}" HorizontalAlignment="Left" Margin="23,10,0,10" Width="124" SelectionChanged="OnItemSelected" Background="#FF616161"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="168,21,0,0" VerticalAlignment="Top" Width="90" Foreground="White"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="168,91,0,0" VerticalAlignment="Top" Width="90" Foreground="White"/>
+        <Button x:Name="Save_bt" Content="Save" HorizontalAlignment="Left" Margin="210,217,0,0" VerticalAlignment="Top" Height="55" Width="146" Click="OnSave_click" FontSize="16"></Button>
+        <Button x:Name="Remove_bt" Content="Remove" HorizontalAlignment="Left" Margin="210,299,0,0" VerticalAlignment="Top" Height="55" Width="144" Click="OnRemove_click" FontSize="16"/>
+        <TextBox x:Name="Login_Box" HorizontalAlignment="Left" Margin="168,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="32" ToolTip="Login" Foreground="#FFBFCDE0"/>
+        <ListBox x:Name="PasswordList" d:ItemsSource="{d:SampleData ItemCount=18}" HorizontalAlignment="Left" Margin="23,10,0,10" Width="124" SelectionChanged="OnItemSelected" Background="#FF3B3355"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="168,21,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFBFCDE0"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="168,91,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFBFCDE0"/>
+        <TextBox x:Name="Password_Box" HorizontalAlignment="Left" Margin="168,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="32" ToolTip="Login" Foreground="#FFBFCDE0"/>
 
     </Grid>
 </Window>

@@ -4,6 +4,96 @@
              xmlns:local="clr-namespace:PasswordManager_Encryption"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <!-- Базовые свойства (можно менять под себя) -->
+            <Setter Property="Background" Value="#3b3355"/>
+            <Setter Property="Foreground" Value="#bfcde0"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="0"/>
+
+            <!-- Переопределение шаблона для поддержки CornerRadius -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- TemplateBinding связывает свойства из Setter выше с элементами внутри шаблона -->
+                        <Border x:Name="border" 
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="8" 
+                        Padding="{TemplateBinding Padding}">
+
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <!-- Анимация/Эффект при наведении мышкой -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#2c3e50"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#1a252f"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <!-- Базовые свойства (размеры, шрифты, цвета) -->
+            <Setter Property="Background" Value="#5d5d81"/>
+            <Setter Property="BorderBrush" Value="#3b3355"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+            <!-- Переопределение шаблона для поддержки скругления -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <!-- CornerRadius="6" задает скругление углов -->
+                        <Border x:Name="border" 
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        
+                        CornerRadius="6" 
+                        SnapsToDevicePixels="True">
+
+                            <!-- Этот элемент отвечает за отображение и прокрутку вводимого текста -->
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                  Focusable="false" 
+                                  HorizontalScrollBarVisibility="Hidden" 
+                                  VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                        <!-- Интерактивные эффекты -->
+                        <ControlTemplate.Triggers>
+                            <!-- Эффект при наведении мыши -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#BDBDBD"/>
+                            </Trigger>
+
+                            <!-- Эффект при клике (поле в фокусе) -->
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#4A90E2"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="1.5"/>
+                            </Trigger>
+
+                            <!-- Состояние, если TextBox заблокирован (IsEnabled="False") -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#F5F5F5"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="#E0E0E0"/>
+                                <Setter Property="Foreground" Value="#9E9E9E"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>
