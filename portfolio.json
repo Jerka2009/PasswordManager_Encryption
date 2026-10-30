@@ -1,0 +1,10 @@
+{
+  "title": "Password manager",
+  "description": "Простое WPF-приложение для сохранения, редактирования и управления паролями. Все пароли шифруются с использованием AES-256 (CBC) с безопасным хранением IV и солью.",
+  "images": [
+    "assets/portfolio/screenshot-1.png",
+    "assets/portfolio/screenshot-2.png"
+  ],
+  "demo": "None",
+  "github": "https://github.com/Jerka2009/PasswordManager_Encryption"
+}
